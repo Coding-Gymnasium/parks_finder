@@ -1,0 +1,8 @@
+<h1>Total Parks Found</h1>
+
+<% @parks.each do |park| %>
+  <h3><%= park.name %></h3>
+  <p><%= park.description %></p>
+  <p><%= park.directions %></p>
+  <p><%= park.hours %></p>
+<% end %>
