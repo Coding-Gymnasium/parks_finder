@@ -1,8 +1,17 @@
+<center>
 <h1>Total Parks Found</h1>
-
 <% @parks.each do |park| %>
-  <h3><%= park.name %></h3>
-  <p><%= park.description %></p>
-  <p><%= park.directions %></p>
-  <p><%= park.hours %></p>
+<div class="park">
+  <h2><%= park[:fullName] %></h2>
+  <h4>Description</h4>
+  <p><%= park[:description] %></p>
+  <h4>Directions</h4>
+  <p><%= park[:directionsInfo] %></p>
+  <h4>Hours</h4>
+  <% park[:operatingHours][0][:standardHours].each do |label, hours| %>
+    <ul><strong><%= label.capitalize %>:</strong> <%= hours %></ul>
+  <% end %> 
+  <hr>
+</div>
 <% end %>
+</center>
